@@ -18,7 +18,7 @@ import com.dev.api.repository.ProdutoRepository;
 @Service
 public class ProdutoImagensService {
 	
-	private static String caminhoImagens = "/home/aurelio/Documents/imagensProjectSpring";
+	private static String caminhoImagens = "/home/aurelio/Documents/imagensProjectSpring/";
 
 	@Autowired
 	private ProdutoImagensRepository produtoImagem;
@@ -30,18 +30,18 @@ public class ProdutoImagensService {
 		return produtoImagem.findAll();
 	}
 	
-	public ProdutoImagens salvar(Long idProduto,MultipartFile arquivo) {
+	public ProdutoImagens salvar(Long idProduto,MultipartFile file) {
 		//pegar o id de produto
 		Produto produto = produtoRepository.findById(idProduto).get();
 		ProdutoImagens objecto = new ProdutoImagens();
 		
 
 		try {
-			if (!arquivo.isEmpty()) {
-				byte[] bytes = arquivo.getBytes();
-				String nomeImagem = String.valueOf(produto.getId()) + arquivo.getOriginalFilename();
+			if (!file.isEmpty()) {
+				byte[] bytes = file.getBytes();
+				String nomeImagem = String.valueOf(produto.getId()) + file.getOriginalFilename();
 				Path caminho = Paths
-						.get(caminhoImagens + String.valueOf(produto.getId()) + arquivo.getOriginalFilename());
+						.get(caminhoImagens + String.valueOf(produto.getId()) + file.getOriginalFilename());
 				Files.write(caminho, bytes);
 				objecto.setNome(nomeImagem);
 				

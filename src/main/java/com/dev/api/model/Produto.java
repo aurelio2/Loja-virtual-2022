@@ -17,10 +17,10 @@ public class Produto {
 	private Date dataCriacao;
 	
 	@ManyToOne
-	@Column(name = "idMarca")
+	@JoinColumn(name = "idMarca")
 	private Marca marca;
 	@ManyToOne
-	@Column(name = "idCategoria")
+	@JoinColumn(name = "idCategoria")
 	private Categoria categoria;
 	public Long getId() {
 		return id;

@@ -28,7 +28,7 @@ public class CategoriaController {
 		return categoriaService.salvar(categoria);
 	}
 	
-	@PostMapping("/")
+	@PutMapping("/")
 	public Categoria actualizar(@RequestBody Categoria categoria) {
 		
 		return categoriaService.actualizar(categoria);

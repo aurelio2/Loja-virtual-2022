@@ -18,7 +18,7 @@ public class Cidade {
 	private Date dataCriacao;
 	
 	@ManyToOne
-	@Column(name = "idEstado")
+	@JoinColumn(name = "idEstado")
 	private Estado estado;
 
 	public Long getId() {

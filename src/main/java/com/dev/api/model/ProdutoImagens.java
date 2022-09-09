@@ -12,7 +12,7 @@ public class ProdutoImagens {
 	private String nome;
 	
 	@ManyToOne
-	@Column(name = "idProduto")
+	@JoinColumn(name = "idProduto")
 	private Produto produto;
 	
 	public Long getId() {

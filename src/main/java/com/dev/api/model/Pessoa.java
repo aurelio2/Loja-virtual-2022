@@ -17,7 +17,7 @@ public class Pessoa {
 	private String cep;
 	
 	@ManyToOne
-	@Column(name = "idCidade")
+	@JoinColumn(name = "idCidade")
 	private Cidade cidade;
 	
 	
