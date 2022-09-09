@@ -32,7 +32,7 @@ public class PermissaoController {
 	@PutMapping("/")
 	public Permissao actualizar(@RequestBody Permissao permissao) {
 		
-		return service.salvar(permissao);
+		return service.actualizar(permissao);
 	}
 	
 	@DeleteMapping("/{id}")
